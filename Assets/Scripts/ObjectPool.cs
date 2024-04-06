@@ -26,9 +26,12 @@ public class ObjectPool<T> : MonoBehaviour, IResettable where T : MonoBehaviour
 
     public void ReturnObject(T newObject)
     {
+        ResetObject(newObject );
         _pool.Enqueue(newObject);
         newObject.gameObject.SetActive(false);
     }
 
     public void Reset() => _pool.Clear();
+
+    private void ResetObject(T obj) => (obj as IResettable)?.Reset();
 }

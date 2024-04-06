@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyBullet : BulletGenerator
 {
-   
 }
 
 

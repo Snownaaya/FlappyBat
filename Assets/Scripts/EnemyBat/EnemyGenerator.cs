@@ -30,7 +30,9 @@ public class EnemyGenerator : MonoBehaviour
 
     private void Spawn()
     {
-        Vector3 spawnPoint = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        float spawnPositionY = Random.Range(_minSpawnPosition, _maxSpawnPosition);
+
+        Vector3 spawnPoint = new Vector3(transform.position.x, spawnPositionY, transform.position.z);
 
         Enemy enemy = _enemy.GetObject();
 

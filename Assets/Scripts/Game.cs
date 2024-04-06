@@ -6,6 +6,7 @@ public class Game : MonoBehaviour
     [SerializeField] private ExampleEnemyPool _enemy;
     [SerializeField] private StartScreen _startScreen;
     [SerializeField] private EndGameScreen _endScreen;
+    [SerializeField] private ExampleBulletPool _bullet;
 
     private void OnEnable()
     {
@@ -37,7 +38,6 @@ public class Game : MonoBehaviour
     {
         StartGame();
         _endScreen.Close();
-        _enemy.Reset();
     }
 
     private void OnPlayButtonClick()
@@ -50,5 +50,7 @@ public class Game : MonoBehaviour
     {
         Time.timeScale = 1;
         _bat.Reset();
+        _enemy.Reset();
+        _bullet.Reset();
     }
 }
