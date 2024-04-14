@@ -1,10 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyGenerator : MonoBehaviour
+public class EnemyGenerator : ObjectPool<Enemy>
 {
-    [SerializeField] private ExampleEnemyPool _enemy;
     [SerializeField] private float _minSpawnPosition;
     [SerializeField] private float _maxSpawnPosition;
 
@@ -12,10 +10,7 @@ public class EnemyGenerator : MonoBehaviour
 
     private float _delay = 5f;
 
-    private void Start()
-    {
-        _coroutine = StartCoroutine(GenerateEnemies());
-    }
+    private void Start() => _coroutine = StartCoroutine(GenerateEnemies());
 
     private IEnumerator GenerateEnemies()
     {
@@ -31,12 +26,11 @@ public class EnemyGenerator : MonoBehaviour
     private void Spawn()
     {
         float spawnPositionY = Random.Range(_minSpawnPosition, _maxSpawnPosition);
-
         Vector3 spawnPoint = new Vector3(transform.position.x, spawnPositionY, transform.position.z);
 
-        Enemy enemy = _enemy.GetObject();
+        Enemy enemyPool = GetObject();
 
-        enemy.gameObject.SetActive(true);
-        enemy.transform.position = spawnPoint;
+        enemyPool.gameObject.SetActive(true);
+        enemyPool.transform.position = spawnPoint;
     }
 }

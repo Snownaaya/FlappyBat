@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BulletRemover : MonoBehaviour
 {
-    [SerializeField] private ExampleBulletPool _bulletPool;
+    [SerializeField] private BulletGenerator _bulletPool;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

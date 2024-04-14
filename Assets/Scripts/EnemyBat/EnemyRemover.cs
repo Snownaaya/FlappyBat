@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class EnemyRemover : MonoBehaviour
 {
-    [SerializeField] private ExampleEnemyPool _enemy;
-    [SerializeField] private ExampleBulletPool _bulletPool;
+    [SerializeField] private EnemyGenerator _enemy;
+    [SerializeField] private EnemyBulletSpawner _bulletPool;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

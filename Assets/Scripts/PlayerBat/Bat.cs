@@ -31,10 +31,7 @@ public class Bat : MonoBehaviour, IResettable
 
     private void ProcessColision(IInteractable interactable)
     {
-        if (interactable is Enemy)
+        if (interactable is Enemy or Bullet)
             GameOver?.Invoke();
-        else if (interactable is ScoreZone)
-            _scoreCounter.Add();
     }
-
 }

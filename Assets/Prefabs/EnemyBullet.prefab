@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6966375056146493918}
   - component: {fileID: 7281849809097258409}
   - component: {fileID: 474067545492317926}
+  - component: {fileID: 6479878794528219173}
+  - component: {fileID: 3240127376800864369}
   - component: {fileID: 6312689763088845571}
   - component: {fileID: 3506587659131833376}
-  - component: {fileID: 6479878794528219173}
   m_Layer: 0
   m_Name: EnemyBullet
   m_TagString: Untagged
@@ -109,6 +110,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6479878794528219173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5723337306260524925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30867aeb1a15c134baea87b3441e54b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _direction: -1
+  _speed: 3
+--- !u!114 &3240127376800864369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5723337306260524925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62c8caa5100e8dc499b40a0241302413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefabs: {fileID: 6479878794528219173}
+  _container: {fileID: 5116676199227707340, guid: 73d5139c58eb8964199d7afad2659925, type: 3}
 --- !u!50 &6312689763088845571
 Rigidbody2D:
   serializedVersion: 4
@@ -171,15 +200,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.47142857
---- !u!114 &6479878794528219173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5723337306260524925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30867aeb1a15c134baea87b3441e54b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

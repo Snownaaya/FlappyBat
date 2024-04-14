@@ -1,3 +1,13 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour { }
+public class Bullet : MonoBehaviour 
+{
+    [SerializeField, Range(-1, 1)] private int _direction;
+    [SerializeField] private float _speed;
+
+    private Rigidbody2D _rigidbody;
+
+    private void Awake() => _rigidbody = GetComponent<Rigidbody2D>();
+
+    public void SetVelocity(Vector2 vector) => _rigidbody.velocity = new Vector2(_direction * _speed * vector.x, 0f);
+}

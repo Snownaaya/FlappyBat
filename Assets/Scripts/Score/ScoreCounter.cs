@@ -1,11 +1,22 @@
 using UnityEngine;
-using UnityEngine.Events;
+using System;
 
 public class ScoreCounter : MonoBehaviour, IResettable
 {
     private int _score = 0;
 
-    public UnityEvent<int> ScoreChanged;
+    public Action<int> ScoreChanged;
+
+    //public void SetEnemy(Enemy enemy)
+    //{
+    //    enemy.EnemyDied += Add;
+    //}
+
+    //private void OnDisable()
+    //{
+    //    Enemy enemy = GetComponent<Enemy>();
+    //    enemy.EnemyDied -= Add;
+    //}
 
     public void Add()
     {

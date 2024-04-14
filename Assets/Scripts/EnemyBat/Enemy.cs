@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class Enemy : MonoBehaviour, IInteractable
 {
@@ -8,4 +9,3 @@ public class Enemy : MonoBehaviour, IInteractable
             Destroy(gameObject);
     }
 }
-
