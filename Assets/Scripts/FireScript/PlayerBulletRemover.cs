@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BulletRemover : MonoBehaviour
+public class PlayerBulletRemover : MonoBehaviour
 {
     [SerializeField] private BulletGenerator _bulletPool;
 

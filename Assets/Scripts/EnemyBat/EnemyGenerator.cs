@@ -18,8 +18,8 @@ public class EnemyGenerator : ObjectPool<Enemy>
 
         while (enabled)
         {
-            Spawn();
             yield return wait;
+            Spawn();
         }
     }
 
@@ -29,7 +29,6 @@ public class EnemyGenerator : ObjectPool<Enemy>
         Vector3 spawnPoint = new Vector3(transform.position.x, spawnPositionY, transform.position.z);
 
         Enemy enemyPool = GetObject();
-
         enemyPool.gameObject.SetActive(true);
         enemyPool.transform.position = spawnPoint;
     }

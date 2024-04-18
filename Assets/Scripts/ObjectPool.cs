@@ -21,7 +21,6 @@ public class ObjectPool<T> : MonoBehaviour, IResettable where T : MonoBehaviour
         if (_pool.Count == 0)
         {
             T newObject = Instantiate(_prefabs, _container);
-            //_prefabs.transform.parent = _container;
             return newObject;
         }
 
@@ -30,9 +29,17 @@ public class ObjectPool<T> : MonoBehaviour, IResettable where T : MonoBehaviour
 
     public void ReturnObject(T newObject)
     {
-        _pool.Enqueue(newObject);
         newObject.gameObject.SetActive(false);
+        _pool.Enqueue(newObject);
     }
 
-    public void Reset() => _pool.Clear();
+    public void Reset()
+    {
+        foreach (var objectSpawn in _pool)
+        {
+            Destroy(objectSpawn);
+        }
+
+        _pool.Clear();
+    }
 }

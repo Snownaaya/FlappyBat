@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7281849809097258409}
   - component: {fileID: 474067545492317926}
   - component: {fileID: 6479878794528219173}
-  - component: {fileID: 3240127376800864369}
+  - component: {fileID: 4186501363425512091}
   - component: {fileID: 6312689763088845571}
   - component: {fileID: 3506587659131833376}
   m_Layer: 0
@@ -123,8 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _direction: -1
-  _speed: 3
---- !u!114 &3240127376800864369
+  _speed: 5
+--- !u!114 &4186501363425512091
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,11 +133,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5723337306260524925}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62c8caa5100e8dc499b40a0241302413, type: 3}
+  m_Script: {fileID: 11500000, guid: b46c643e729ed1242bcc78f6bb81dc79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabs: {fileID: 6479878794528219173}
-  _container: {fileID: 5116676199227707340, guid: 73d5139c58eb8964199d7afad2659925, type: 3}
+  _bulletSpawner: {fileID: -8804753049280842908, guid: 73d5139c58eb8964199d7afad2659925, type: 3}
 --- !u!50 &6312689763088845571
 Rigidbody2D:
   serializedVersion: 4
@@ -146,7 +145,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5723337306260524925}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -194,7 +193,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
