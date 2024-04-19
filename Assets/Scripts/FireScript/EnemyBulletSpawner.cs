@@ -9,7 +9,7 @@ public class EnemyBulletSpawner : ObjectPool<Bullet>
 
     private Coroutine _coroutine;
 
-    private void Start() => StartCoroutine(Attack());
+    private void Start() => _coroutine = StartCoroutine(Attack());
 
     private void Shoot()
     {

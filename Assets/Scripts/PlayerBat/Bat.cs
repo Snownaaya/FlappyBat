@@ -7,11 +7,13 @@ public class Bat : MonoBehaviour, IResettable
 {
     private BatMover _batMover;
     private BatCollisionHandler _handler;
+    private ScoreCounter _scoreCounter;
 
     public event Action GameOver;
 
     private void Awake()
     {
+        _scoreCounter = GetComponent<ScoreCounter>();
         _batMover = GetComponent<BatMover>();
         _handler = GetComponent<BatCollisionHandler>();
     }
@@ -22,6 +24,7 @@ public class Bat : MonoBehaviour, IResettable
 
     public void Reset()
     {
+        _scoreCounter.Reset();
         _batMover.Reset();
     }
 
@@ -29,5 +32,8 @@ public class Bat : MonoBehaviour, IResettable
     {
         if (interactable is Enemy or EnemyBullet)
             GameOver?.Invoke();
+
+        if (interactable is ScoreZone)
+            _scoreCounter.Add();
     }
 }
