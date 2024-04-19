@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class ObjectPool<T> : MonoBehaviour, IResettable where T : MonoBehaviour
 {
-    [SerializeField] private T _prefabs;
+    [SerializeField] private T _prefab;
     [SerializeField] private Transform _container;
 
     private Queue<T> _pool;
@@ -20,7 +21,7 @@ public class ObjectPool<T> : MonoBehaviour, IResettable where T : MonoBehaviour
     {
         if (_pool.Count == 0)
         {
-            T newObject = Instantiate(_prefabs, _container);
+            T newObject = Instantiate(_prefab, _container);
             return newObject;
         }
 
@@ -35,7 +36,7 @@ public class ObjectPool<T> : MonoBehaviour, IResettable where T : MonoBehaviour
 
     public void Reset()
     {
-        foreach (var objectSpawn in _pool)
+        foreach (var objectSpawn in _pool.ToList())
         {
             Destroy(objectSpawn);
         }
