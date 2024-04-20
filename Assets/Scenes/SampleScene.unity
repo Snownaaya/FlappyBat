@@ -816,7 +816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49081f19f2d9d924b8f3fc7f4f84972b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabs: {fileID: 1158746133500358193, guid: dc09688a557892241b3de90a79afbb7f, type: 3}
+  _prefab: {fileID: 1158746133500358193, guid: dc09688a557892241b3de90a79afbb7f, type: 3}
   _container: {fileID: 341773369}
   _speed: 10
   _fireRate: 0.2
@@ -1847,7 +1847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aff4f59488a3e241a0170c9967c4a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabs: {fileID: 7462247044552548020, guid: 73d5139c58eb8964199d7afad2659925, type: 3}
+  _prefab: {fileID: 7462247044552548020, guid: 73d5139c58eb8964199d7afad2659925, type: 3}
   _container: {fileID: 897713169}
   _minSpawnPosition: -3
   _maxSpawnPosition: 3.5

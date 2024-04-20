@@ -4,8 +4,8 @@ using System;
 public class ObjectRemover : MonoBehaviour
 {
     [SerializeField] private EnemyGenerator _enemy;
-    [SerializeField] private BulletGenerator _bulletPool;
-    [SerializeField] private EnemyBulletSpawner _bulletSpawner;
+    [SerializeField] private BulletGenerator _playerBullet;
+    [SerializeField] private EnemyBulletSpawner _enemyBullet;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -13,9 +13,9 @@ public class ObjectRemover : MonoBehaviour
             _enemy.ReturnObject(enemy);
 
         if (other.TryGetComponent(out Bullet bullet))
-            _bulletPool.ReturnObject(bullet);
+            _playerBullet.ReturnObject(bullet);
 
         if (other.TryGetComponent(out Bullet bullets))
-            _bulletSpawner.ReturnObject(bullets);
+            _enemyBullet.ReturnObject(bullets);
     }
 }

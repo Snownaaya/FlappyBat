@@ -5,6 +5,7 @@ public class EnemyGenerator : ObjectPool<Enemy>
 {
     [SerializeField] private float _minSpawnPosition;
     [SerializeField] private float _maxSpawnPosition;
+    [SerializeField] EnemyBulletSpawner _bulletSpawner;
 
     private Coroutine _coroutine;
 
@@ -29,7 +30,8 @@ public class EnemyGenerator : ObjectPool<Enemy>
         Vector3 spawnPoint = new Vector3(transform.position.x, spawnPositionY, transform.position.z);
 
         Enemy enemyPool = GetObject();
-        enemyPool.gameObject.SetActive(true);
+        enemyPool.GetComponent<EnemyShooter>().SetObjectRemover(_bulletSpawner);
         enemyPool.transform.position = spawnPoint;
+        enemyPool.gameObject.SetActive(true);
     }
 }
