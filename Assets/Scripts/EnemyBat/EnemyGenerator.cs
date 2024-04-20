@@ -30,7 +30,7 @@ public class EnemyGenerator : ObjectPool<Enemy>
         Vector3 spawnPoint = new Vector3(transform.position.x, spawnPositionY, transform.position.z);
 
         Enemy enemyPool = GetObject();
-        enemyPool.GetComponent<EnemyShooter>().SetObjectRemover(_bulletSpawner);
+        enemyPool.GetComponent<EnemyShooter>().SetObjectSpawner(_bulletSpawner);
         enemyPool.transform.position = spawnPoint;
         enemyPool.gameObject.SetActive(true);
     }

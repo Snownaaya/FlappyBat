@@ -10,7 +10,7 @@ public class EnemyShooter : MonoBehaviour
 
     private void Start() => _coroutine = StartCoroutine(Attack());
 
-    public void SetObjectRemover(EnemyBulletSpawner objectRemover) => _bulletSpawner = objectRemover;
+    public void SetObjectSpawner(EnemyBulletSpawner objectSpawner) => _bulletSpawner = objectSpawner;
 
     public IEnumerator Attack()
     {
@@ -18,7 +18,7 @@ public class EnemyShooter : MonoBehaviour
 
         while (enabled)
         {
-            _bulletSpawner.Shoot();
+            _bulletSpawner.SpawnBullet(transform.position);
             yield return wait;
         }
     }

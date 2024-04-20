@@ -37,6 +37,7 @@ public class BatMover : MonoBehaviour, IResettable
         transform.position = _startPosition;
         transform.rotation = Quaternion.identity;
         _rigidbody.velocity = Vector2.zero;
+        _rigidbody.velocity = new Vector2(_speed, 0);
     }
 
     private void Move()

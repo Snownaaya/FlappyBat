@@ -8,6 +8,12 @@ public class BulletGenerator : ObjectPool<Bullet>
 
     private float _nextAttackTime = 0f;
 
+    private void Update()
+    {
+        if (PlayerInput.GetShot())
+            Fire();
+    }
+
     public void Fire()
     {
         if (Time.time >= _nextAttackTime)

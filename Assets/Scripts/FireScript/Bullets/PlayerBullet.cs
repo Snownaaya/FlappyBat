@@ -1,4 +1,4 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerBullet : MonoBehaviour { }
+public class PlayerBullet : Bullet { }
