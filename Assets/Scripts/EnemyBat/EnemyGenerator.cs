@@ -9,7 +9,7 @@ public class EnemyGenerator : ObjectPool<Enemy>
 
     private Coroutine _coroutine;
 
-    private float _delay = 3f;
+    private float _delay = 2f;
 
     private void Start() => _coroutine = StartCoroutine(GenerateEnemies());
 
