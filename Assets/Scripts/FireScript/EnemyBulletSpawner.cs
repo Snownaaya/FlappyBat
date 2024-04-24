@@ -1,13 +1,13 @@
 using UnityEngine;
- 
+
 public class EnemyBulletSpawner : ObjectPool<Bullet>
 {
     [SerializeField] Rigidbody2D _rigidbody;
 
-    public void SpawnBullet(Vector3 position)
+    public void SpawnBullet(Transform shotPosition)
     {
         Bullet bullet = GetObject();
-        bullet.transform.position = position;
+        bullet.transform.position = shotPosition.position;
         bullet.SetVelocity(_rigidbody.velocity);
         bullet.gameObject.SetActive(true);
     }

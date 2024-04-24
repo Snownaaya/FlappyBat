@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class ObjectPool<T> : MonoBehaviour, IResettable where T : MonoBehaviour
+public abstract class ObjectPool<T> : MonoBehaviour, IResettable where T : MonoBehaviour
 {
     [SerializeField] private T _prefab;
     [SerializeField] private Transform _container;
@@ -25,7 +25,9 @@ public class ObjectPool<T> : MonoBehaviour, IResettable where T : MonoBehaviour
             return newObject;
         }
 
-        return _pool.Dequeue();
+        T pooledObject = _pool.Dequeue();
+        pooledObject.gameObject.SetActive(false);
+        return pooledObject;
     }
 
     public void ReturnObject(T newObject)
@@ -38,7 +40,7 @@ public class ObjectPool<T> : MonoBehaviour, IResettable where T : MonoBehaviour
     {
         foreach (var objectSpawn in _pool.ToList())
         {
-            Destroy(objectSpawn);
+            objectSpawn.gameObject.SetActive(false);
         }
 
         _pool.Clear();
