@@ -3,11 +3,13 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerBullet : Bullet
 {
+    [SerializeField] private Enemy _enemy;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.TryGetComponent(out Enemy enemy) && other.GetType() == typeof(PolygonCollider2D))
+        if (other.gameObject.TryGetComponent(out Enemy enemy))
         {
-            EnemyEvents.OnEnemyDestroyed();
+            _enemy.OnEnemyDestroyed();
             enemy.gameObject.SetActive(false);
         }
     }

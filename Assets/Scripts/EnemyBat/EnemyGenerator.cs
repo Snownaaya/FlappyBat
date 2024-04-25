@@ -13,14 +13,13 @@ public class EnemyGenerator : ObjectPool<Enemy>
 
     private void Start() => _coroutine = StartCoroutine(GenerateEnemies());
 
-    private void Spawn(Enemy enemy, EnemyBulletSpawner bulletSpawner)
+    private void Spawn(Enemy enemy)
     {
         float spawnPositionY = Random.Range(_minSpawnPosition, _maxSpawnPosition);
         enemy.transform.position = new Vector3(transform.position.x, spawnPositionY, transform.position.z);
 
         enemy.gameObject.SetActive(true);
-
-        enemy.GetComponent<EnemyShooter>().SetObjectSpawner(bulletSpawner);
+        enemy.SetupShooter(_bulletSpawner);
     }
 
     private IEnumerator GenerateEnemies()
@@ -31,7 +30,7 @@ public class EnemyGenerator : ObjectPool<Enemy>
         {
             Enemy enemyPool = GetObject();
 
-            Spawn(enemyPool, _bulletSpawner);
+            Spawn(enemyPool);
 
             yield return wait;
         }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyShooter : MonoBehaviour
 {
-    [SerializeField] private float _delay = 2f;
+    [SerializeField] private float _delay = 3f;
     [SerializeField] private Transform _shotPosition;
 
     private EnemyBulletSpawner _bulletSpawner;

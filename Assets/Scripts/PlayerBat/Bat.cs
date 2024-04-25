@@ -32,8 +32,5 @@ public class Bat : MonoBehaviour, IResettable
     {
         if (interactable is Enemy or EnemyBullet or GameOverZone)
             GameOver?.Invoke();
-
-        else if (interactable is ScoreZone)
-            _scoreCounter.Add();
     }
 }

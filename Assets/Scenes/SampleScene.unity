@@ -816,7 +816,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c12aa154c823a479dcfcacaf94dea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _remover: {fileID: 0}
 --- !u!114 &997802170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1227,7 +1226,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.11320782, y: 11.433962}
+  m_Offset: {x: -0.11320782, y: 11.595252}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1238,7 +1237,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 21.301886, y: 0.62264156}
+  m_Size: {x: 21.301886, y: 0.30006218}
   m_EdgeRadius: 0
 --- !u!61 &1515997637
 BoxCollider2D:
@@ -1272,7 +1271,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.037736893, y: 0}
+  m_Offset: {x: 0.037736893, y: -0.3870964}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1283,7 +1282,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 21.301884, y: 1}
+  m_Size: {x: 21.301884, y: 0.22580719}
   m_EdgeRadius: 0
 --- !u!1 &1640010872
 GameObject:
@@ -1469,9 +1468,9 @@ GameObject:
   - component: {fileID: 1774264731}
   - component: {fileID: 1774264735}
   - component: {fileID: 1774264734}
+  - component: {fileID: 1774264736}
   - component: {fileID: 1774264733}
   - component: {fileID: 1774264732}
-  - component: {fileID: 1774264736}
   m_Layer: 0
   m_Name: ObjectRemover
   m_TagString: Untagged
