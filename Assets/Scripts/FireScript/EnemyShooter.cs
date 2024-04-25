@@ -9,16 +9,12 @@ public class EnemyShooter : MonoBehaviour
     private EnemyBulletSpawner _bulletSpawner;
     private Coroutine _coroutine;
 
-    private void OnEnable()
+    public void SetObjectSpawner(EnemyBulletSpawner objectSpawner)
     {
+        _bulletSpawner = objectSpawner;
         StopAttack();
-
         _coroutine = StartCoroutine(Attack());
     }
-
-    private void OnDisable() => StopAttack();
-
-    public void SetObjectSpawner(EnemyBulletSpawner objectSpawner) => _bulletSpawner = objectSpawner;
 
     private void StopAttack()
     {
@@ -26,7 +22,7 @@ public class EnemyShooter : MonoBehaviour
             StopCoroutine(_coroutine);
     }
 
-    private IEnumerator Attack()
+    public IEnumerator Attack()
     {
         var wait = new WaitForSeconds(_delay);
 

@@ -1,8 +1,9 @@
 using UnityEngine;
 using System;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Bullet : MonoBehaviour
-{ 
+{
     [SerializeField, Range(-1, 1)] private int _direction;
     [SerializeField] private float _speed;
 
@@ -10,5 +11,5 @@ public class Bullet : MonoBehaviour
 
     private void Awake() => _rigidbody = GetComponent<Rigidbody2D>();
 
-    public void SetVelocity(Vector2 vector) => _rigidbody.velocity = new Vector2(_direction * _speed + vector.sqrMagnitude, 0f);
+    public void SetVelocity(Vector2 vector) => _rigidbody.velocity = new Vector2(_direction * _speed, 0f) + vector;
 }

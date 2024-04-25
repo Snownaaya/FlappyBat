@@ -7,6 +7,10 @@ public class ScoreCounter : MonoBehaviour, IResettable
 
     public Action<int> ScoreChanged;
 
+    private void OnEnable() => EnemyEvents.EnemyDestroyed += Add;
+
+    private void OnDisable() => EnemyEvents.EnemyDestroyed -= Add;
+
     public void Add()
     {
         _score++;

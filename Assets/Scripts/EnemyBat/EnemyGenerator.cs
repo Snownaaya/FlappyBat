@@ -13,6 +13,16 @@ public class EnemyGenerator : ObjectPool<Enemy>
 
     private void Start() => _coroutine = StartCoroutine(GenerateEnemies());
 
+    private void Spawn(Enemy enemy, EnemyBulletSpawner bulletSpawner)
+    {
+        float spawnPositionY = Random.Range(_minSpawnPosition, _maxSpawnPosition);
+        enemy.transform.position = new Vector3(transform.position.x, spawnPositionY, transform.position.z);
+
+        enemy.gameObject.SetActive(true);
+
+        enemy.GetComponent<EnemyShooter>().SetObjectSpawner(bulletSpawner);
+    }
+
     private IEnumerator GenerateEnemies()
     {
         var wait = new WaitForSeconds(_delay);
@@ -25,15 +35,5 @@ public class EnemyGenerator : ObjectPool<Enemy>
 
             yield return wait;
         }
-    }
-
-    private void Spawn(Enemy enemyPool, EnemyBulletSpawner bulletSpawner)
-    {
-        enemyPool.GetComponent<EnemyShooter>().SetObjectSpawner(bulletSpawner);
-
-        float spawnPositionY = Random.Range(_minSpawnPosition, _maxSpawnPosition);
-        enemyPool.transform.position = new Vector3(transform.position.x, spawnPositionY, transform.position.z);
-
-        enemyPool.gameObject.SetActive(true);
     }
 }
