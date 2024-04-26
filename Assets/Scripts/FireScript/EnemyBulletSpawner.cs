@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class EnemyBulletSpawner : ObjectPool<Bullet>
 {
-    [SerializeField] Rigidbody2D _rigidbody;
+    [SerializeField] private Rigidbody2D _rigidbody;
+    [SerializeField] private bool _isPlayerBullet;
 
     public void SpawnBullet(Transform shotPosition)
     {

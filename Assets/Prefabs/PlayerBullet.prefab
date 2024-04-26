@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -1281657252964865176}
   - component: {fileID: 9061117331843569260}
   - component: {fileID: 3546430478947573352}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: PlayerBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,4 +185,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _direction: 1
   _speed: 10
+  isPlayerBullet: 1
   _enemy: {fileID: 7462247044552548020, guid: 73d5139c58eb8964199d7afad2659925, type: 3}
