@@ -2068,7 +2068,7 @@ MonoBehaviour:
   _prefab: {fileID: -8578727591140849351, guid: 7e1dda4d1659f2b46a001f382d3be06a, type: 3}
   _container: {fileID: 2064613380}
   _rigidbody: {fileID: 1824078561357549798, guid: 73d5139c58eb8964199d7afad2659925, type: 3}
-  _isPlayerBullet: 1
+  _isPlayerBullet: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

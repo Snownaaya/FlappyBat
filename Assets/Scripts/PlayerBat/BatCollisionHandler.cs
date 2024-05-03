@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Bat))]
 public class BatCollisionHandler : MonoBehaviour
 {
